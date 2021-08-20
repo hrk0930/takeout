@@ -563,10 +563,13 @@ table tr:last-child *{
 
 .taiku {
   overflow: scroll;
+  height: 100%;
+  background-image: linear-gradient(40deg, #e6f51a 0%, #fb7ba2 74%);
 }
 
 .taiku0 {
-  background-image: linear-gradient(40deg, #e6f51a 0%, #fb7ba2 74%);
+  height: calc(100vh - 190px);
+  position: relative;
 }
 
 .taiku1 {
@@ -590,9 +593,9 @@ table tr:last-child *{
 }
 
 .jpeg1{
-  height: calc(100vh - 190px);
+  height: 20%;
   width: 1440px;
-  position: relative;
+  position: absolute;
 }
 
 .index2{
