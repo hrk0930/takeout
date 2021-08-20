@@ -1,0 +1,15 @@
+<ul class="resipi">
+<li class="card2">
+  <%= link_to image_tag(menu.image, class: :card__img2 ), menu_path(menu.id) %>
+  <div class="card__body">
+    <%= link_to menu.name, menu_path(menu.id), class: :card__title%>
+    <p class="card__summary">
+      <%= menu.profile %>
+    </p>
+    <p class="card__summary">
+      <%= menu.price %><%= "円"%>
+    </p>
+    <%= link_to menu.user.name, menu_path(menu.id), class: :card__user %>
+  </div>
+</li>
+</ul>

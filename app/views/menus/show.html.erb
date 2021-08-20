@@ -1,0 +1,44 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+          <p class="prototype__hedding">
+           <span>店名</span>
+           <%= link_to @menu.user.name, user_path(@menu.user.id), class: :prototype__user %>
+           
+          </p>
+      
+      <%# メニューの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @menu.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集する", edit_menu_path(@menu.id), class: :prototype__btn %>
+          <%= link_to "削除する", menu_path(@menu.id), method: :delete,   class: :prototype__btn %>
+        </div>
+        <% end %>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <div class="prototype__image">
+        <%= image_tag @menu.image,  class: :syuhinimage %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__title">商品名</p>
+          <p class="detail__message">
+            <%= @menu.name %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">商品説明</p>
+          <p class="detail__message">
+            <%= @menu.profile %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">価格</p>
+          <p class="detail__message">
+            <%= @menu.price %><%= "円" %>
+          </p>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</main>

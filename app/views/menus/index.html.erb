@@ -1,0 +1,85 @@
+<div class="menusindex">
+ <% if user_signed_in? %>
+      <div class="greeting">
+        <%= current_user.name%>
+        <%= "様、おつかれさまです" %>
+        <%=link_to image_tag("8.png", class: :logo3), new_menu_path %>
+        </div>
+        <% else %>
+        <div class="greeting">
+        <%= "いらっしゃいませ" %>
+        <%=image_tag("bag.png", class: :logo3)%>
+      </div>
+      <% end %>
+ 
+      <ul class='lists'>
+      <% @users.each do |user| %>
+        <%= link_to user_path(user.id) do %>
+        <li class='list'>
+        <div class='image5'>
+          <%= image_tag user.image, class: "item-img"  %>
+        </div>
+        <div class='item-info'>
+              <div class='item-name'>
+               <%= user.name %>
+              </div>
+            <div class='item-price'>
+                <%= "住所" %>
+               <%= user.access %>
+             </div>
+            <div class='star-btn'>
+               <%= "お店の定休日は月曜日" %>
+               <%= user.holiday %>
+                <%= "です" %>
+             </div>
+             <%= "ひとこと、" %>
+             <div class='star-btn1'>
+              <%= user.word %>
+            </div>
+           
+          </div>
+          </li>
+        <% end %>
+        <% end %>
+          </ul>
+
+            <% if @users.length == 0 %>
+            <div class="card__wrapper">
+            <div class="index2">
+            <%= "登録されるまで少し待ってね〜" %>
+            </div>
+            </div>
+            <% end %>
+
+     <div class="card__wrapper">
+         <div class="index">商品一覧</div>
+     </div>
+
+          <ul class='lists1'>
+                <% @menus.each do |menu| %>
+                <%= link_to menu_path(menu.id) do %>
+              <li class='list1'>
+                  <div class='image5'>
+                       <div class="item_img0">
+                             <%= link_to image_tag(menu.image.variant(resize: '220x220'),class: :item_img1), menu_path(menu.id)%>
+                        </div>
+                  </div>
+                   <div class='item-info'>
+                          <div class='item-setumei'>
+                          <%= "商品説明" %>
+                          </div>
+                         <div class='item-name1'>
+                            <%= menu.profile %>
+                         </div>
+                        <div class='item-price'>
+                              <%= "価格" %>
+                          <%= menu.price %><%= "円" %>
+                         </div>
+                       <%= link_to menu.user.name, menu_path(menu.id), class: :card__user %>
+                    </div>
+             </li>
+        <% end %>
+        <% end %>
+          </ul>
+
+</div>

@@ -1,0 +1,35 @@
+<%= form_with model: @user, local: true do |f|%>
+  <div class="field">
+    <%= f.label :"住所", "住所" %><br />
+    <%= f.text_field :access, id:"menu_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"定休日", "定休日" %><br />
+    <%= f.text_area :holiday, class: :form__text, id:"menu_price" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"店主からの一言", "店主からの一言" %><br />
+    <%= f.text_area :word, class: :form__text, id:"menu_profile" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"お支払い対応", "お支払い対応" %><br />
+    <%= f.text_area :money, class: :form__text, id:"menu_profile" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"お問合せ", "お問合せ" %><br />
+    <%= f.text_area :phone_number, class: :form__text, id:"menu_profile" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"写真", "商品の写真" %><br />
+    <%= f.file_field :image, id:"menu_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

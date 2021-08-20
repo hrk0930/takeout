@@ -1,0 +1,60 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+      <%= @user.name%>
+        <%= "情報"%>
+         </h2>
+
+           <% if user_signed_in? && current_user.id == @user.id %>
+              <div class="henns">
+              <%= @user.name%>
+              <%= "の"%>
+              <%= link_to '登録内容編集',  edit_user_path(@user.id), method: :get, class: :uz_hennsyuu%>
+              <%= link_to '削除', user_path(@user.id), method: :delete %>
+              </div>
+          <% end %>
+     <div class="toiawase1">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前 <i class="fas fa-store-alt"></i></th>
+            <td class="table__col2"><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">住所 <i class="fas fa-house-user"></i></th>
+            <td class="table__col2"><%= @user.access %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">定休日 <i class="fas fa-bed"></i></th>
+            <td class="table__col2"><%= @user.holiday %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">店主からの一言 <i class="far fa-star"></i></th>
+            <td class="table__col2"><%= @user.word %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">お支払い対応 <i class="far fa-star"></i></th>
+            <td class="table__col2"><%= @user.money %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">お問合せ <i class="fas fa-phone-square-alt"></i></th>
+            <td class="table__col2"><%= @user.phone_number %>
+          </tr>
+        </tbody>
+      </table>
+      <div class="toiawase">
+       <%= "←この番号から注文してね"%>
+      </div>
+      </div>
+      <h2 class="page-heading">
+        <%= @user.name%>
+        <%= "のテイクアイトメニュー"%>
+      </h2>
+      <div class="user__card">
+        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%= render partial: 'menus/menu', collection: @user.menus %>
+      </div>
+    </div>
+  </div>
+</div>

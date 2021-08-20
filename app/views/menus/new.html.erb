@@ -1,0 +1,12 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <div class="page-heading">
+      <h2>商品を載せてね〜</h2>
+      <%= image_tag("4.png", class: :logo4) %>
+      </div>
+        <%# 部分テンプレートでフォームを表示する %>
+        <%= render partial: 'form', locals: { menu: @menu } %>
+    </div>
+  </div>
+</div>
