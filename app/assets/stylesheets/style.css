@@ -443,6 +443,15 @@ justify-content: center;
   margin-bottom: 30px;
 }
 
+.toiawase3{
+ margin: 50px;
+ width: 500px;
+}
+
+
+.toiawase2{
+}
+
 .toiawase1{
   display: flex;
   align-items: flex-end;
@@ -455,6 +464,7 @@ justify-content: center;
   border: solid 5px white;
   border-radius: 100%;
   background-color: #f3ecdc;
+  text-align: center;
 }
 
 .table{
@@ -604,8 +614,12 @@ table tr:last-child *{
 }
 
 .index2{
-  color: rgb(83, 93, 233);
+  color: rgb(215, 29, 174);
   font-size: 55px;
   margin-left: 25%;
   font-weight: bold;
+  -webkit-filter:drop-shadow(10px 10px 1px rgba(165, 78, 146, 0.2));
+  -moz-filter:drop-shadow(10px 10px 1px rgba(160, 90, 123, 0.2));
+  -ms-filter:drop-shadow(10px 10px 1px rgba(182, 95, 153, 0.2));
+  filter:drop-shadow(10px 10px 1px rgba(171, 118, 150, 0.2));
 }

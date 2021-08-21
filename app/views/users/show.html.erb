@@ -43,9 +43,12 @@
           </tr>
         </tbody>
       </table>
-      <div class="toiawase">
-       <%= "←この番号から注文してね"%>
-      </div>
+        <div class="toiawase2">
+              <%= image_tag @user.image, class: "toiawase3" %>
+              <div class="toiawase">
+                  <%= "←この番号から注文してね"%>
+                </div>
+       </div>
       </div>
       <h2 class="page-heading">
         <%= @user.name%>
