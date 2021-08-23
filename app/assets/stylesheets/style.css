@@ -50,19 +50,22 @@ a {
 .nav {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .logo1 {
   width: 130px;
+  height: 123px;
 }
 
 .logo2 {
   width: 120px;
+  height: 123px;
 }
 
 .logo3 {
   width: 120px;
-  margin-top: 10px;
+  height: 110px;
+  margin-top: 20px;
 }
 
 .logo4 {
@@ -71,12 +74,22 @@ a {
   height: 110px;
 }
 
+.logol {
+  width: 130px;
+  height: 123px;
+}
+
+.namel {
+  display: flex;
+}
+
 .name1 {
   color: #080808;
   font-size: 80px;
-  width: 50%;
-  padding-bottom: 50%;
-  text-align: center;
+  width: 200%;
+  padding: 0%;
+  margin: 0%;
+  text-align: left;
 
   font-family: 'Rampart One', cursive;
 }
