@@ -17,11 +17,11 @@
         <%= link_to user_path(user.id) do %>
         <li class='list'>
         <div class='image5'>
-          <%= image_tag user.image, class: "item-img"  %>
+          <%= image_tag(user.image, class: "item-img")  %>
         </div>
         <div class='item-info'>
               <div class='item-name'>
-               <%#= user.name %>
+               <%= user.name %>
               </div>
             <div class='item-price'>
                 <%= "住所" %>
